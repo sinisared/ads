@@ -14,11 +14,17 @@ Provided are migration files and Users table seeder.
 ## Controller methods
 
 * AdsController@show($id?) - show all sorted by created_at desc, or show by id (route /api/ads , /api/ads/{x})
-* AdsController@create - post rest api to create a new ad, requires api_token in uri for authentication, post json object with all fields required to create an Ad except the id.
+* AdsController@create - post rest api to create a new ad, requires api_token in uri for authentication, post json object with all fields required to create an Ad except the id. (route post:api/ad/{x})
+* AdsController@update($adId) - put rest api to update an existing ad ad, requires api_token in uri for authentication, post json object with all fields required to create an Ad except the id. (route put:api/ad/{x})
 
 ## Validator
 
 * AdsController@validateAd
+
+## Error codes
+* 200 all is ok
+* 403 Access denied
+* 422 You are trying to edit an ad that is not yours
 
 ## Test cases
 
